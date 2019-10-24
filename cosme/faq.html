@@ -12,15 +12,40 @@
 <meta content="Ready-made, made-to-order, ingredients." name="description">
 <title>Hydration. Moisturiser/Moisturizer</title>
 <style>
-.hide {display: none}
+.dropbtn{background-color:#3498DB;border:none;color:#fff;cursor:pointer;font-size:2.3em;margin:0 auto;padding:10px;text-align:center;width:100%}
+.dropbtn:hover,.dropbtn:focus{background-color:#2980B9}
+.dropdown{display:block;position:sticky;top:0px;margin:auto;width:80%}
+.dropdown-content{background-color:#f1f1f1;display:none;height:500px;overflow-y:scroll;z-index:1}
+.dropdown-content a{color:#000;display:block;padding:12px 16px;text-decoration:none}
+.dropdown a:hover{background-color:#ddd}
+.dropdown a{border-bottom:solid 1px #000}
+.show{display:block}
+#myDropdown a{font-size:2.3em}
+#showCD{margin-top:50px;padding:0}
 </style>
 <script>
-$('select.div-toggler').change(function(){
-    var target = $(this).data('target');
-    $(target).children().addClass('hide');
-    var show = $("option:selected", this).data('show');
-    $(show).removeClass('hide');
-});
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction1(){document.getElementById("myDropdown").classList.toggle("show")}
+// Close the dropdown menu if the user clicks outside of it
+window.onclick=function(event){if(!event.target.matches('.dropbtn')){var dropdowns=document.getElementsByClassName("dropdown-content");var i;for(i=0;i<dropdowns.length;i+=1){var openDropdown=dropdowns[i];if(openDropdown.classList.contains('show')){openDropdown.classList.remove('show')}}}};function displayCD(str){if(str==""){document.getElementById("showCD").innerHTML="";return}if(window.XMLHttpRequest){
+// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp=new XMLHttpRequest();
+} else { // code for IE6, IE5
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP")};xmlhttp.onreadystatechange=function(){if(this.readyState==4&&this.status==200){document.getElementById("showCD").innerHTML=this.responseText}};xmlhttp.open("GET","http://clch.rf.gd/cosme/kmr?q="+str,true);xmlhttp.send();
+//scroll to top
+document.getElementById("rest").scrollIntoView({behavior:'smooth'});
+}
+// Wait until the window finishes loaded before executing any script
+window.onload = function() {
+// Add id to body
+var ap = document.getElementsByTagName("BODY")[0];
+ap.setAttribute("id", "rest");
+// Add class to anchor
+var x=document.getElementById("myDropdown").querySelectorAll("a");var i;for(i=0;i<x.length;i++){x[i].classList.add("akr");}
+// Class name. Add eventlistener
+var classname=document.getElementsByClassName("akr");var faqfunc=function(event){event.preventDefault();displayCD(this.text);return false};for(var i=0;i<classname.length;i+=1){classname[i].addEventListener('click',faqfunc,false)}
+}
 </script>
 
 </head>
@@ -34,21 +59,21 @@ body.classList.add("all-loaded");
 <div id="page">
   <section class="wrapper">
 
-<select class="div-toggler" data-target=".my-info-1">
-  <option value="">Click to select a topic:</option>
-  <option value="orange" data-show=".citrus">Natural, organic, chemical, artificial, danger</option>
-  <option value="pear" data-show=".pome">Preservative</option>
-  <option>Why you do not give free sample?</option>
-  <option>Can I not use only one thing? Use only honey/glycerin as the only moisturiser? Use only soapwort plant as the only soap?</option>
-  <option>Skin types</option>
-  <option>How does moisturiser work?</option>
-  <option>Clinically proven?</option>
-</select>
-
-<div class="my-info-1">
-    <div class="citrus hide">Citrus is a common term and genus (Citrus) of flowering plants in the rue family, Rutaceae.</div>
-    <div class="pome hide">In botany, a pome (after the Latin word for fruit: pōmum) is a type of fruit produced by flowering plants in the subtribe Malinae of the family Rosaceae.</div>
+<div class="dropdown">
+<button onclick="myFunction1()" class="dropbtn">Click to select a topic:</button>
+<div id="myDropdown" class="dropdown-content">
+<a href="#" rel="0">Natural, organic, chemical, artificial, danger</a>
+<a href="#" rel="1">Preservative</a>
+<a href="#" rel="2">Why you do not give free sample?</a>
+<a href="#" rel="3">Can I not use only one thing? Use only honey/glycerin as the only moisturiser? Use only soapwort plant as the only soap?</a>
+<a href="#" rel="4">Skin types</a>
+<a href="#" rel="5">How does moisturiser work?</a>
+<a href="#" rel="6">Clinically proven?</a>
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
 </div>
+</div>
+
+<div id='showCD'></div> 
   
   </section>
 </div>
