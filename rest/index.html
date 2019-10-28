@@ -3,21 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+<meta content="index, follow" name="robots">
+<link href="favicon.ico" rel="shortcut icon" type="images/ico">
+<link href="layout.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
   
 <meta content="Ready-made, made-to-order, ingredients." name="description">
+<title>Ready-made, made-to-order, ingredients</title>
 <style>
-body {opacity:0}
-body.all-loaded{opacity:1}
-html,body{font-size:10px}body{background:linear-gradient(rgba(242,242,242,1),rgba(242,242,242,1));color:#000;font-family:'Open Sans',sans-serif;font-weight:400;line-height:3em;margin:0;overflow-x:hidden;padding:0}*,*::before,*::after{box-sizing:border-box}
-#page{padding:70px 0 160px}
-.wrapper{box-sizing:border-box;margin:0 auto;max-width:80%}
-h1{font-size:3.5rem;font-weight:600;line-height:1.2em;margin:.7em 0}
-h2{font-size:2.7rem;font-weight:400;line-height:1.2em;margin:.7em 0 .5em}
-h3{font-size:1.9rem;font-weight:400;line-height:1.2em;margin:0 0 .7em;line-height:1.6}
-img{max-width:100%;height:auto;border-radius:5%;margin:20px}
 .div-toggler{background-color:#3498DB;border:none;color:#fff;cursor:pointer;font-size:2.3em;margin:0 auto;padding:10px;text-align:center;width:100%}
 .div-toggler, .view{display:block;position:sticky;top:0px;margin:auto;width:80%}
 #showCD{margin-top:10px;padding:0}
@@ -260,7 +254,6 @@ img{max-width:100%;height:auto;border-radius:5%;margin:20px}
 </style>
 <script src="jquery-2.2.4.min.js"></script>
 <script src="jQuerySelectric.js"></script>
-<script src="demo.js"></script>
 <script src="xjs.js"></script>
 <script type="text/javascript">//<![CDATA[
 $(window).load(function(){
@@ -277,8 +270,10 @@ $(show).removeClass('hide');
 document.getElementById("rest").scrollIntoView({behavior:'smooth'});
 });
 });//]]>
-
-
+//Selectric
+$(function(){
+$('#basic').selectric();
+});
 </script>
 </head>
 <body>
