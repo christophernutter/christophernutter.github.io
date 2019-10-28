@@ -156,13 +156,10 @@
     /*======================================
       Demos
     ======================================*/
-    $.fn.selectric.defaults.disableOnMobile = false;
 
     $('#basic').selectric();
 
-    $('#forceRenderAbove').selectric({ forceRenderAbove: true });
 
-    $('#forceRenderBelow').selectric({ forceRenderBelow: true });
 
    
   });
